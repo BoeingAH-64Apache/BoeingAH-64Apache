@@ -22,8 +22,12 @@
 				<p>
 					Cette fiat de L'europe est une petite voiture avec un style très unique, mais ne laissez pas son apparence vous berner, cette petite bagnole vous emènera de point A au point B sans ronchonner!
 				</p>
-			<div id="Acheter">
-                <input type="button" id="facture1" onclick="Facture1"  value="Acheter">
+				<p>
+					Combien d'articles voulez-vous acheter?
+				</p>
+					<input type="string" id="NombreFiat">
+			<div id="AcheterFiat">	
+            	<input type="button" id="facturefiat" onclick="Facture1"  value="Acheter">
             </div>
 			<h2>Mobility ventures</h2>
 				<img src="https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/media/51/2016-mobility-ventures-mv-1-inline1-photo-673468-s-original.jpg?resize=980:*">
@@ -39,6 +43,10 @@
 				<p>
 					Prêt pour une livraison au domicile!
 				</p>
+				<p>
+					Combien d'articles voulez-vous acheter?
+				</p>
+					<input type="string" id="NombreMV1">
 			<div id="AcheterMV1">
                 <input type="button" id="facture2" onclick="Facture2"  value="Acheter">
             </div>
@@ -53,20 +61,43 @@
 				<p>
 					Cette petite citadine est un bon choix pour un véhicule de tout les jours. Le 4 cylindres est frugal, une qualitée très recherchées ces temps-ci du au coûts de l'essence!
 				</p>
+				<p>
+					Combien d'articles voulez-vous acheter?
+				</p>
+				<input type="string" id="NombreKia">
 			<div id="AcheterKia">
                 <input type="button" id="facture3" onclick="Facture3"  value="Acheter">
             </div>
-	</div>
-	<script>	
-		function Facture1 {
-		//Faire apparaitre la facture pour la fiat
-		}
-		function Facture2{
-		//faire apparaitre la facture pour le MV1
-		}
-		function Facture3 {
-		//faire apparaitre la facture pour le kia soul
-		}
-	</script>
+		<script>	
+			function Facture1() {
+				var prix1 = 13687
+				var NombreFiat = document.getElementById("NombreFiat").value;
+				var totalsanstaxes1 = NombreFiat * prix1
+				var totalavectaxes1 = totalsanstaxes1 * 0.13
+
+				var resultfac = document.getElementById("facture");
+				facture.innerHTML = "Nombre d'articles" + NombreFiat + "<br>" + "Total sans taxes ="  + totalsanstaxes1 + "<br>" + "Total avec taxes =" + totalavectaxes1;
+				}
+			function Facture2() {
+				var prix2 = 23950
+				var NombreMV1 = document.getElementById("NombreMV1").value;
+				var totalsanstaxes2 = NombreMV1 * prix2
+				var totalavectaxes2 = totalsanstaxes2 * 0.13
+
+				var resultfac = document.getElementById("facture");
+				facture.innerHTML = "Nombre d'articles" + NombreMV1 + "<br>" + "Total sans taxes ="  + totalsanstaxes2 + "<br>" + "Total avec taxes =" + totalavectaxes2;
+			}
+			function Facture3() {
+				var prix3 = 24759
+				var NombreKia = document.getElementById("NombreKia").value;
+				var totalsanstaxes3 = NombreKia * prix3
+				var totalavectaxes3 = totalsanstaxes3 * 0.13
+
+				var resultfac = document.getElementById("facture");
+				facture.innerHTML = "Nombre d'articles" + NombreKia + "<br>" + "Total sans taxes =" + totalsanstaxes3 + "<br>" + "Total avec taxes =" + totalavectaxes3;
+			}
+		</script>
+		<div id="facture">
+		</div>
 	</body>
 </html>
